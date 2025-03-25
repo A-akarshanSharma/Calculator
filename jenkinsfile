@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/A-akarshanSharma/Calculator.git' // Replace with your repo URL
+                git branch: 'main', url: 'https://github.com/A-akarshanSharma/Calculator.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'g++ -o calc calc.cpp' // Compile C++ program
+                sh 'g++ -o calc calc.cpp' // Compile
             }
         }
         stage('Test') {
             steps {
-                sh './calc' // Run the compiled program
+                sh './calc' // Run the program
             }
         }
     }
