@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'g++ -o calculator calc.cpp' // Compile C++ program
+                sh 'g++ -o calc calc.cpp' // Compile C++ program
             }
         }
         stage('Test') {
             steps {
-                sh './calculator' // Run the compiled program
+                sh './calc' // Run the compiled program
             }
         }
     }
