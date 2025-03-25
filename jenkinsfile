@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'g++ -o calc calc.cpp' // Compile
+                bat 'g++ -o calc calc.cpp'
             }
         }
         stage('Test') {
             steps {
-                sh './calc' // Run the program
+                bat 'calc.exe'
             }
         }
     }
